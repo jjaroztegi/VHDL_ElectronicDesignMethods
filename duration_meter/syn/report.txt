@@ -1,0 +1,146 @@
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 55 in file
+        '/alumnos/a155378/DE/lab4/src/meter.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            63            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine meter line 41 in file
+                '/alumnos/a155378/DE/lab4/src/meter.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      en_q_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      d_o_q_reg      | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'meter'.
+Information: Building the design 'cnt' instantiated from design 'meter' with
+        the parameters "wl=5". (HDL-193)
+
+Inferred memory devices in process
+        in routine cnt_wl5 line 24 in file
+                '/alumnos/a155378/DE/lab4/src/cnt.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    count_reg_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+
+ 
+****************************************
+Report : reference
+Design : meter
+Version: N-2017.09-SP3
+Date   : Thu Nov 28 15:16:54 2024
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN33               cxz_HRDLIB  1373.920044       1   1373.920044  
+AO21               cxz_HRDLIB  1030.439941       1   1030.439941  
+AO22               cxz_HRDLIB  1030.439941       5   5152.199707  
+BU4                cxz_HRDLIB   515.219971       2   1030.439941  
+DFA                cxz_HRDLIB  1889.140015       3   5667.420044  n
+DFA2               cxz_HRDLIB  2060.879883       6  12365.279297  n
+EN1                cxz_HRDLIB  1030.439941       4   4121.759766  
+EO1                cxz_HRDLIB  1030.439941       1   1030.439941  
+IN1                cxz_HRDLIB   343.480011       1    343.480011  
+IN2                cxz_HRDLIB   343.480011       3   1030.440033  
+NA2                cxz_HRDLIB   515.219971       1    515.219971  
+NA3                cxz_HRDLIB   686.960022       1    686.960022  
+NA22               cxz_HRDLIB   515.219971       4   2060.879883  
+NO2                cxz_HRDLIB   515.219971       3   1545.659912  
+NO3                cxz_HRDLIB   686.960022       1    686.960022  
+NO22               cxz_HRDLIB   858.700012       1    858.700012  
+ON21               cxz_HRDLIB   686.960022       2   1373.920044  
+ON211              cxz_HRDLIB   858.700012       1    858.700012  
+OR22               cxz_HRDLIB   686.960022       1    686.960022  
+cnt_wl5                       22669.679138       1  22669.679138  h, n
+-----------------------------------------------------------------------------
+Total 20 references                                 65089.457764
+
+****************************************
+Design: cnt_wl5 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AO22               cxz_HRDLIB  1030.439941       5   5152.199707  
+DFA                cxz_HRDLIB  1889.140015       2   3778.280029  n
+DFA2               cxz_HRDLIB  2060.879883       3   6182.639648  n
+EN1                cxz_HRDLIB  1030.439941       3   3091.319824  
+EO1                cxz_HRDLIB  1030.439941       1   1030.439941  
+NA2                cxz_HRDLIB   515.219971       1    515.219971  
+NA3                cxz_HRDLIB   686.960022       1    686.960022  
+NO2                cxz_HRDLIB   515.219971       1    515.219971  
+NO22               cxz_HRDLIB   858.700012       2   1717.400024  
+-----------------------------------------------------------------------------
+Total 9 references                                  22669.679138
+ 
+****************************************
+Report : constraint
+        -verbose
+        -max_delay
+Design : meter
+Version: N-2017.09-SP3
+Date   : Thu Nov 28 15:17:07 2024
+****************************************
+
+
+  Startpoint: d_i (input port clocked by clk)
+  Endpoint: cnt_inst/count_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  meter              10k                   cxz_HRDLIB
+  cnt_wl5            10k                   cxz_HRDLIB
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                    13.00      13.00 r
+  d_i (in)                                 0.14      13.14 r
+  U25/Q (BU4)                              0.86      14.00 r
+  U39/Q (IN2)                              0.56      14.56 f
+  U9/Q (NA22)                              0.55      15.11 r
+  U12/Q (IN2)                              0.48      15.59 f
+  cnt_inst/U4/Q (NO22)                     0.85      16.44 r
+  cnt_inst/U3/Q (NO22)                     1.00      17.44 f
+  cnt_inst/U6/Q (AO22)                     0.78      18.22 f
+  cnt_inst/count_reg_reg[3]/D (DFA)        0.00      18.22 f
+  data arrival time                                  18.22
+
+  clock clk (rise edge)                   20.00      20.00
+  clock network delay (ideal)              0.00      20.00
+  cnt_inst/count_reg_reg[3]/C (DFA)        0.00      20.00 r
+  library setup time                      -0.55      19.45
+  data required time                                 19.45
+  -----------------------------------------------------------
+  data required time                                 19.45
+  data arrival time                                 -18.22
+  -----------------------------------------------------------
+  slack (MET)                                         1.23
+
+

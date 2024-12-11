@@ -1,0 +1,73 @@
+ #
+ # File: .synopsys_dc.setup
+ # Subj: setup for the AMS cxz library in TCL
+ #
+
+set TECH cxz
+
+
+set AMS_DIR        [getenv AMS_DIR]
+set SYNOPSYS        [getenv SYNOPSYS]
+
+
+
+set search_path [list . ${AMS_DIR}/synopsys/${TECH}_3.3V/  ${SYNOPSYS}/libraries/syn/]
+
+
+define_design_lib IEEE -path "${SYNOPSYS}/packages/IEEE/lib"
+define_design_lib WORK -path ./work
+
+
+
+
+
+
+# syntax for VHDL-out 
+set vhdlout_write_components false
+set vhdlout_dont_write_types true
+set vhdlout_single_bit VECTOR
+set vhdlout_use_packages [list IEEE.std_logic_1164.all ${TECH}_HRDLIB.Vcomponents.all]
+set vhdlout_debug_mode true
+set vhdlout_follow_vector_direction "true"
+
+set sdfout_no_edge "true"
+ 
+set allow_newer_db_files true
+ 
+# syntax for Verilog-out 
+
+
+set verilogout_no_tri "true"
+set verilogout_equation false
+set write_name_nets_same_as_ports "true"
+set verilogout_unconnected_prefix "SNC_"
+set verilogout_single_bit "false"
+set hdlout_internal_busses "true"
+set bus_inference_style "%s\[%d\]"
+set bus_naming_style "%s\[%d\]"
+set bus_dimension_separator_style "\[\]"
+
+
+set edifout_netlist_only true
+set edifout_power_and_ground_representation cell
+set edifout_power_name VCC
+set edifout_power_pin_name P
+set edifout_ground_name GND
+set edifout_ground_pin_name G
+set edifout_write_properties_list [list instance_number pad_location part INIT]
+set edifout_no_array true
+ 
+# for asynchronous resets
+set hdlin_translate_off_skip_text true
+set compile_fix_multiple_port_nets true
+
+set target_library [list ${TECH}_HRDLIB.db]
+set link_library [list ${TECH}_HRDLIB.db dw_foundation.sldb standard.sldb]
+#set link_library [list ${TECH}_HRDLIB.db dw_foundation.sldb dw01.sldb dw02.sldb dw03.sldb standard.sldb]
+set symbol_library ${TECH}_HRDLIB.sdb
+
+#set synthetic_library  [list dw_foundation.sldb dw01.sldb dw02.sldb dw03.sldb standard.sldb]
+set synthetic_library  [list dw_foundation.sldb standard.sldb]
+
+
+

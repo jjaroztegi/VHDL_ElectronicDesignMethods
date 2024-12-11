@@ -1,0 +1,110 @@
+Statistics for case statements in always block at line 55 in file
+        '/alumnos/a149372/Escritorio/lab3/src/wavegen.vhd'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            63            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine wavegen line 43 in file
+                '/alumnos/a149372/Escritorio/lab3/src/wavegen.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   mode_change_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'wavegen'.
+
+ 
+****************************************
+Report : reference
+Design : wavegen
+Version: N-2017.09-SP3
+Date   : Tue Nov 19 15:43:38 2024
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AN22               cxz_HRDLIB   858.700012       2   1717.400024  
+AN32               cxz_HRDLIB  1030.439941       1   1030.439941  
+AO221              cxz_HRDLIB  1373.920044       1   1373.920044  
+DFA                cxz_HRDLIB  1889.140015       2   3778.280029  n
+DFA2               cxz_HRDLIB  2060.879883       2   4121.759766  n
+EN1                cxz_HRDLIB  1030.439941       1   1030.439941  
+IN2                cxz_HRDLIB   343.480011       5   1717.400055  
+NA2                cxz_HRDLIB   515.219971       1    515.219971  
+NA3                cxz_HRDLIB   686.960022       1    686.960022  
+NA4                cxz_HRDLIB   858.700012       2   1717.400024  
+NA22               cxz_HRDLIB   515.219971       1    515.219971  
+NO2                cxz_HRDLIB   515.219971       3   1545.659912  
+NO3                cxz_HRDLIB   686.960022       2   1373.920044  
+NO22               cxz_HRDLIB   858.700012       1    858.700012  
+NO32               cxz_HRDLIB  1030.439941       1   1030.439941  
+ON21               cxz_HRDLIB   686.960022       3   2060.880066  
+ON211              cxz_HRDLIB   858.700012       1    858.700012  
+ON221              cxz_HRDLIB  1030.439941       1   1030.439941  
+OR4                cxz_HRDLIB  1030.439941       1   1030.439941  
+counter                           0.000000       1      0.000000  b
+counter                           0.000000       1      0.000000  b
+-----------------------------------------------------------------------------
+Total 21 references                                 27993.619659
+
+ 
+****************************************
+Report : constraint
+        -verbose
+        -min_delay
+Design : wavegen
+Version: N-2017.09-SP3
+Date   : Tue Nov 19 15:44:35 2024
+****************************************
+
+
+  Startpoint: mode_change_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mode_change_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  wavegen            10k                   cxz_HRDLIB
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  mode_change_reg/C (DFA)                  0.00       0.00 r
+  mode_change_reg/QN (DFA)                 2.43       2.43 r
+  U25/Q (ON221)                            0.45       2.88 f
+  mode_change_reg/D (DFA)                  0.00       2.88 f
+  data arrival time                                   2.88
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  mode_change_reg/C (DFA)                  0.00       0.00 r
+  library hold time                        0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -2.88
+  -----------------------------------------------------------
+  slack (MET)                                         2.88
+
+

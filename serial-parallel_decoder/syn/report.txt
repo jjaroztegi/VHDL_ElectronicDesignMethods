@@ -1,0 +1,198 @@
+ 
+****************************************
+Report : clocks
+Design : decs2p
+Version: N-2017.09-SP3
+Date   : Thu Nov  7 15:03:47 2024
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+clk             20.00   {0 10}                        {clk}
+--------------------------------------------------------------------------------
+1
+ 
+****************************************
+Report : design
+Design : decs2p
+Version: N-2017.09-SP3
+Date   : Thu Nov  7 15:04:01 2024
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    gtech (File: /apps/synopsys/syn/N-2017.09-SP3/libraries/syn/gtech.db)
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : TYPICAL
+    Library : cxz_HRDLIB
+    Process :   1.00
+    Temperature :  25.00
+    Voltage :   3.30
+    Interconnect Model : balanced_tree
+
+Wire Loading Model:
+
+    No wire loading specified.
+
+
+Wire Loading Model Mode: enclosed.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    None Required
+
+Design Parameters:
+
+    None specified.
+
+Information: This design contains unmapped logic. (RPT-7)
+1
+ 
+****************************************
+Report : port
+        -verbose
+Design : decs2p
+Version: N-2017.09-SP3
+Date   : Thu Nov  7 15:04:42 2024
+****************************************
+
+
+                       Pin      Wire     Max     Max     Connection
+Port           Dir     Load     Load     Trans   Cap     Class      Attrs
+--------------------------------------------------------------------------------
+d_o[1]         out     0.2000   0.0000   --      --      --         
+d_o[0]         out     0.2000   0.0000   --      --      --         
+reset_n        in      0.0000   0.0000   --      --      --         
+d_i            in      0.0000   0.0000   --       0.50   --         
+en_o           out     0.0000   0.0000   --      --      --         
+clk            in      0.0000   0.0000   --      --      --         
+
+
+              External  Max             Min                Min       Min
+              Number    Wireload        Wireload           Pin       Wire
+Port          Points    Model           Model              Load      Load
+--------------------------------------------------------------------------------
+d_o[1]             1      --              --              --        -- 
+d_o[0]             1      --              --              --        -- 
+reset_n            1      --              --              --        -- 
+d_i                1      --              --              --        -- 
+en_o               1      --              --              --        -- 
+clk                1      --              --              --        -- 
+
+                    Input Delay
+                  Min             Max       Related   Max
+Input Port    Rise    Fall    Rise    Fall   Clock  Fanout
+--------------------------------------------------------------------------------
+reset_n       --      --      --      --      --      -- 
+d_i           --      --     12.00   12.00  clk       --    
+clk           --      --      --      --      --      -- 
+
+
+                    Driving Cell
+Input Port   Rise(min/max)      Fall(min/max)      Mult(min/max)  Attrs(min/max)
+--------------------------------------------------------------------------------
+d_i          cxz_HRDLIB/IN1     cxz_HRDLIB/IN1       -- /  --     
+
+
+               Max Drive      Min Drive      Resistance    Min    Min       Cell
+Input Port    Rise    Fall   Rise    Fall   Max     Min    Cap    Fanout    Deg
+--------------------------------------------------------------------------------
+reset_n       --      --     --      --     --      --     --     --        -- 
+d_i           --      --     --      --     --      --     --     --        -- 
+clk           --      --     --      --     --      --     --     --        -- 
+
+
+               Max Tran        Min Tran
+Input Port    Rise    Fall    Rise    Fall
+--------------------------------------------------------------------------------
+reset_n       --      --      --      -- 
+d_i           --      --      --      -- 
+clk           --      --      --      -- 
+
+
+                    Output Delay
+                  Min             Max      Related  Fanout
+Output Port   Rise    Fall    Rise    Fall  Clock     Load
+--------------------------------------------------------------------------------
+d_o[1]        --      --      5.00    5.00  clk       0.00  
+d_o[0]        --      --      5.00    5.00  clk       0.00  
+en_o          --      --      --      --      --      0.00
+
+ 
+****************************************
+Report : constraint
+        -verbose
+        -max_delay
+Design : decs2p
+Version: N-2017.09-SP3
+Date   : Thu Nov  7 15:09:26 2024
+****************************************
+
+
+  Startpoint: d_i (input port clocked by clk)
+  Endpoint: b0_reg (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  decs2p             10k                   cxz_HRDLIB
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                    12.00      12.00 r
+  d_i (in)                                 0.82      12.82 r
+  U20/Q (AO22)                             0.75      13.57 r
+  b0_reg/D (DFA)                           0.00      13.57 r
+  data arrival time                                  13.57
+
+  clock clk (rise edge)                   20.00      20.00
+  clock network delay (ideal)              0.00      20.00
+  b0_reg/C (DFA)                           0.00      20.00 r
+  library setup time                      -0.42      19.58
+  data required time                                 19.58
+  -----------------------------------------------------------
+  data required time                                 19.58
+  data arrival time                                 -13.57
+  -----------------------------------------------------------
+  slack (MET)                                         6.01
+
+

@@ -1,0 +1,4 @@
+vhdlan -nc -kdb \
+../src/detector_paridad.vhd \
+../src/tb_detector_paridad.vhd \
+../src/tb_detector_paridad_cfg.vhd

@@ -1,0 +1,4 @@
+vhdlan -nc ../src/cnt.vhd \
+../src/div.vhd \
+../src/tb_div.vhd \
+../src/tb_div_cfg.vhd

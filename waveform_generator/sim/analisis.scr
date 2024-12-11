@@ -1,0 +1,4 @@
+vhdlan -nc -kdb ../src/counter.vhd \
+../src/wavegen.vhd \
+../src/tb_wavegen.vhd \
+../src/tb_wavegen_cfg.vhd

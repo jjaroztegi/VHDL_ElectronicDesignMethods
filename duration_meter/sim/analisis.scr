@@ -1,0 +1,4 @@
+vhdlan -nc -kdb ../src/cnt.vhd \
+../src/meter.vhd \
+../src/tb_meter.vhd \
+../src/tb_meter_cfg.vhd

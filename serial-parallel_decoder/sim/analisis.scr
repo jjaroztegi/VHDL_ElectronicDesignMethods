@@ -1,0 +1,5 @@
+vhdlan -nc -kdb \
+../src/decs2p.vhd \
+../src/tb_decs2p.vhd \
+../src/tb_decs2p_cfg.vhd
+
