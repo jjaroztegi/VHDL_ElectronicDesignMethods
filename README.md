@@ -45,8 +45,8 @@ Each module includes:
 
 The following Synopsys tools were used for simulation, analysis, and synthesis:
 - **[VCS](https://www.synopsys.com/verification/simulation/vcs.html):** For simulation and functional verification of VHDL designs.  
-- **[Verdi](https://www.synopsys.com/verification/debug/rtl-debug.html):** For advanced debugging and waveform analysis.  
-- **[Design Vision](https://www.synopsys.com/implementation-and-signoff/rtl-synthesis/design-vision.html):** For logic synthesis and design optimization.
+- **[Verdi](https://www.synopsys.com/verification/debug/verdi.html):** For advanced debugging and waveform analysis.  
+- **[Design Vision](https://www.synopsys.com/implementation-and-signoff/rtl-synthesis-test/dc-ultra.html):** For logic synthesis and design optimization.
 
 ## How to Use
 
