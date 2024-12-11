@@ -52,7 +52,7 @@ The following Synopsys tools were used for simulation, analysis, and synthesis:
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/yourusername/vhdl-electronic-design-methods.git
+   git clone https://github.com/jjaroztegi/VHDL_ElectronicDesignMethods.git
    ```
 
 2. **Navigate to a Module**  
